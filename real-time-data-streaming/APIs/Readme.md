@@ -18,3 +18,10 @@
 Set Up Kafka Consumer: Each service will have a Kafka consumer to read messages from its respective topic.
 MongoDB Integration: Each service will post the consumed messages to MongoDB.
 Dockerize the Services: Each service will be containerized using Docker for easy deployment.
+
+## Deployment 
+'''bash
+$ cd APIs
+$ sudo docker-compose -f docker-compose.apis.yml up --build --d
+$ sudo docker-compose -f docker-compose.apis.yml down
+'''

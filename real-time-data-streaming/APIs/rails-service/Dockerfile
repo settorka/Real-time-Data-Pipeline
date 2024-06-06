@@ -2,7 +2,8 @@ FROM ruby:2.7
 
 WORKDIR /app
 
-COPY Gemfile Gemfile.lock ./
+COPY Gemfile ./
+RUN gem update --system 3.3.22
 RUN bundle install
 
 COPY . .
