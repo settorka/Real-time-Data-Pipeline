@@ -1,47 +1,20 @@
-## Project Overview
+# APIs 
 
-Post multiple records to a database from multiple sources
 
-## Requirements
-Database should be able to handle multiple sub-second writes from multiple sources (Available and consistent)
+## List of APIs to Implement
+- Node.js with Express
+- Ruby on Rails
+- ASP.NET Core
+- Spring Boot
+- Django
+- Elixir Phoenix
 
-Sources are APIs making post requests to the DB
+### Each API will:
 
-Data is being fed from a random data generator
+- Consume messages from its respective Kafka topic.
+- Post the messages to the MongoDB collection "generatedRecords".
 
-Data record consists of
-- API name
-- Random text (10 characters)
-- Current time
-
-## Capacity planning
-Microservice design  
-- can handle downtime of any given API
-- asynchronous message passing 
-
-Data will be coming fast to the mul-> high throughput
-- Pipeline/robust message broker/queue to handle this
-
-CAP theorem for DB -> MongoDB
-- less verbose and complex implementation and async handling
-- sharding and replication better than Cassandra
-
-## Tools
-- Desired APIs -> Dockerized Microservices:
--- Node.js with Express
--- Ruby on Rails
--- ASP.NET Core
--- Spring Boot
--- Django 
--- Elixir Phoenix
-
-- Data Generator: Go -> best for concurrent and parallel data generation -> Dockerized microservice
-
-- Message Broker: Kafka ->  -> Zookeeper + Kafka dockerized 
-
-- Database: MongoDB 
-
-- Frontend: React with WebSocket (using Socket.IO) -> Real time updates when data fails/succeeds in DB posting
-
-Connection: Websockets -> direct passing of data to db
-
+## Common Steps for All APIs
+Set Up Kafka Consumer: Each service will have a Kafka consumer to read messages from its respective topic.
+MongoDB Integration: Each service will post the consumed messages to MongoDB.
+Dockerize the Services: Each service will be containerized using Docker for easy deployment.
