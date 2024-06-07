@@ -24,9 +24,9 @@ services:
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
-    volumes:
-      - ./create_topics.sh:/usr/bin/create_topics.sh
-    command: "sh -c 'kafka-server-start /etc/kafka/server.properties & while ! echo exit | nc localhost 9092; do sleep 5; done; /usr/bin/create_topics.sh'"
+      KAFKA_MESSAGE_MAX_BYTES: 209715200
+      KAFKA_REPLICA_FETCH_MAX_BYTES: 209715200
+
 
   data-generator:
     build: .
