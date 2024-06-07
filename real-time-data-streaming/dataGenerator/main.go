@@ -22,8 +22,8 @@ var (
 )
 
 type Record struct {
-    APIName    string    `json:"apiName"`
-    RandomText string    `json:"randomText"`
+    APIName     string    `json:"apiName"`
+    RandomText  string    `json:"randomText"`
     CurrentTime time.Time `json:"currentTime"`
 }
 
@@ -37,15 +37,15 @@ func main() {
     go handleHTTPRequests()
 
     go func() {
-		for start := range startStop {
-			if start {
-				startDataGeneration(producer)
-			} else {
-				stopDataGeneration()
-			}
-		}
-	}()
-	
+        for start := range startStop {
+            if start {
+                startDataGeneration(producer)
+            } else {
+                stopDataGeneration()
+            }
+        }
+    }()
+
     // Wait for termination signal
     sigchan := make(chan os.Signal, 1)
     signal.Notify(sigchan, syscall.SIGINT, syscall.SIGTERM)
@@ -133,13 +133,14 @@ func startDataGeneration(producer *kafka.Producer) {
 }
 
 func stopDataGeneration() {
-    // Logic for stopping the data generation gracefully
+    // Close the startStop channel to stop the goroutine
+    close(startStop)
 }
 
 func produceRecord(producer *kafka.Producer) {
     record := Record{
-        APIName:    getRandomAPIName(),
-        RandomText: getRandomString(10),
+        APIName:     getRandomAPIName(),
+        RandomText:  getRandomString(10),
         CurrentTime: time.Now(),
     }
 

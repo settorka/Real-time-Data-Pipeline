@@ -9,6 +9,8 @@ services:
       ZOOKEEPER_TICK_TIME: 2000
     ports:
       - "2181:2181"
+    networks:
+      - message-broker-network
 
   kafka:
     image: confluentinc/cp-kafka:latest
@@ -26,14 +28,9 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_MESSAGE_MAX_BYTES: 209715200
       KAFKA_REPLICA_FETCH_MAX_BYTES: 209715200
+    networks:
+      - message-broker-network
 
-
-  data-generator:
-    build: .
-    container_name: data-generator
-    ports:
-      - "8080:8080"
-    depends_on:
-      - kafka
-    environment:
-      - KAFKA_BOOTSTRAP_SERVERS=kafka:9092
+networks:
+  message-broker-network:
+    external: true

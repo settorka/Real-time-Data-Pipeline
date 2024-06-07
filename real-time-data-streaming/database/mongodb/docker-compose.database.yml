@@ -11,6 +11,12 @@ services:
       - ./init-mongo:/docker-entrypoint-initdb.d
     environment:
       MONGO_INITDB_DATABASE: mydatabase
+    networks:
+      - message-broker-network
 
 volumes:
   mongo-data:
+
+networks:
+  message-broker-network:
+    external: true
