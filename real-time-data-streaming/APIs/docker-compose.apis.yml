@@ -12,6 +12,17 @@ services:
     networks:
       - message-broker-network
 
+  rails-service:
+    build: ./rails-service
+    container_name: rails-service
+    ports:
+      - "5001:5001"
+    environment:
+      - KAFKA_BOOTSTRAP_SERVERS=kafka:9092
+      - MONGO_URI=mongodb://mongo:27017
+    networks:
+      - message-broker-network
+
 networks:
   message-broker-network:
     external: true
