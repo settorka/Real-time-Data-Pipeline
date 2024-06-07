@@ -133,9 +133,10 @@ func startDataGeneration(producer *kafka.Producer) {
 }
 
 func stopDataGeneration() {
-    // Close the startStop channel to stop the goroutine
-    close(startStop)
+    // Logic for stopping the data generation gracefully
+    running = false
 }
+
 
 func produceRecord(producer *kafka.Producer) {
     record := Record{
@@ -150,7 +151,7 @@ func produceRecord(producer *kafka.Producer) {
         return
     }
 
-    topic := getRandomAPIName()
+    topic := record.APIName
     err = producer.Produce(&kafka.Message{
         TopicPartition: kafka.TopicPartition{Topic: &topic, Partition: kafka.PartitionAny},
         Value:          recordBytes,
