@@ -22,6 +22,17 @@ services:
       - MONGO_URI=mongodb://mongo:27017
     networks:
       - message-broker-network
+  
+  springboot-service:
+    build: ./springboot-service
+    container_name: springboot-service
+    ports:
+      - "5002:5002"
+    environment:
+      - KAFKA_BOOTSTRAP_SERVERS=kafka:9092
+      - MONGO_URI=mongodb://mongo:27017
+    networks:
+      - message-broker-network
 
 networks:
   message-broker-network:

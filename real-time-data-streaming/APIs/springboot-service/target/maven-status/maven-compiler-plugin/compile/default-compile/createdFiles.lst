@@ -1,0 +1,4 @@
+com/example/springbootservice/SpringbootServiceApplication.class
+com/example/springbootservice/KafkaConsumerConfig.class
+com/example/springbootservice/MongoConfig.class
+com/example/springbootservice/KafkaConsumer.class
