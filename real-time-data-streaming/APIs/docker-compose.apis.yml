@@ -33,6 +33,18 @@ services:
       - MONGO_URI=mongodb://mongo:27017
     networks:
       - message-broker-network
+  
+  phoenix-service:
+    build: ./phoenix_service
+    container_name: phoenix-service
+    ports:
+      - "5003:4000"
+    environment:
+      - KAFKA_BOOTSTRAP_SERVERS=kafka:9092
+      - MONGO_URI=mongodb://mongo:27017
+      - SECRET_KEY_BASE=MjBaxfQbMRMPMdG2Gxv/3EhIJmjJlTH+HbOQbmPxk12W2RjFkW8TlgKdgD5OO768
+    networks:
+      - message-broker-network
 
 networks:
   message-broker-network:
