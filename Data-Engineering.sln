@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "real-time-data-streaming", "real-time-data-streaming", "{3375799F-20D6-46DA-B1EA-656E36F73428}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "APIs", "APIs", "{94CCAF1E-8F02-4B63-80AE-B82E59E3EAAD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "aspnetcore-service", "real-time-data-streaming\APIs\aspnetcore-service\aspnetcore-service.csproj", "{5C34F9F8-F9A1-43AA-8CB5-CCBCB1A8BF8C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5C34F9F8-F9A1-43AA-8CB5-CCBCB1A8BF8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C34F9F8-F9A1-43AA-8CB5-CCBCB1A8BF8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C34F9F8-F9A1-43AA-8CB5-CCBCB1A8BF8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C34F9F8-F9A1-43AA-8CB5-CCBCB1A8BF8C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{94CCAF1E-8F02-4B63-80AE-B82E59E3EAAD} = {3375799F-20D6-46DA-B1EA-656E36F73428}
+		{5C34F9F8-F9A1-43AA-8CB5-CCBCB1A8BF8C} = {94CCAF1E-8F02-4B63-80AE-B82E59E3EAAD}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B908D091-8955-48D2-9139-43D69673706B}
+	EndGlobalSection
+EndGlobal
