@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("aspnetcore-service")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+44c4a7eee2d419914e69a02ff9d0d1c16ab7e1e0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0ad5eb3b89c58a9fc98c51104923eab30f214e72")]
 [assembly: System.Reflection.AssemblyProductAttribute("aspnetcore-service")]
 [assembly: System.Reflection.AssemblyTitleAttribute("aspnetcore-service")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
