@@ -1,0 +1,20 @@
+replicaSet:
+  enabled: true
+
+auth:
+  enabled: true
+  rootPassword: ROOT_ENV
+  username: USER_ENV
+  password: PASSWORD_ENV
+  database: "mydatabase"
+
+persistence:
+  enabled: true
+  storageClass: "default"
+  accessModes:
+    - ReadWriteOnce
+  size: 8Gi
+
+service:
+  type: ClusterIP
+  port: 27017
