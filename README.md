@@ -17,6 +17,6 @@ Cloud-Native application for sink-source stream processing of JSON records
 - MongoDB replicas to handle influx of post requests to DB,
   - deployed locally for test
   -   Was hosted on Azure Kubernetes Engine using
-    - Terraform
-    - Helm (bitnami for mongodb) + Kubernetes
-    - https://learn.microsoft.com/en-us/azure/aks/mongodb-overview
+      - Terraform
+      - Helm (bitnami for mongodb) + Kubernetes
+      - https://learn.microsoft.com/en-us/azure/aks/mongodb-overview
